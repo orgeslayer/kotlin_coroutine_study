@@ -24,6 +24,6 @@ fun main() = runBlocking<Unit> { // start main coroutine
      }
  }
  -------------------------------------------
- main 함수를 runBlocking{ } 빌더로 생성된 코루틴을 메인 코루틴이라고 표현되며,
+ main 함수를 runBlocking{ } 빌더로 생성된 코루틴을 메인 코루틴이라고 표현하고 있으며,
  편의상 이 후부터는 메인 코루틴으로 표현됩니다.
  */
