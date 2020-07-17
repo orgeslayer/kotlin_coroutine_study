@@ -1,0 +1,13 @@
+.DS_Store
+.idea/shelf
+/confluence/target
+/dependencies
+/dist
+/gh-pages
+/ideaSDK
+/android-studio/sdk
+/out
+/tmp
+/jps-plugin/testData/kannotator
+.gradle/
+build/
