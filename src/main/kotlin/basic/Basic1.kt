@@ -1,4 +1,4 @@
-package base
+package basic
 
 import kotlinx.coroutines.*
 
@@ -18,7 +18,7 @@ fun main() {
  를 출력하는 프로그램이다.
 
  본질적으로, 코루틴은 light-weighted thread 로 표현할 수 있다.
- 샘플코드의 경우 launch 코루틴 빌더를 통해 코드블록이 실행된다.
+ 샘플코드의 경우 GlobalScope.launch{ } 코루틴 빌더를 통해 코드블록이 실행된다.
  GlobalScope.launch 코드블록을 thread{} 로, delay(...) 대신 Thread.sleep(...) 로 변경한 뒤 실행해도 동일한 결과를 확인할 수 있다.
 
  만약 GlobalScope.launch 를 thread{} 로 변경할 경우, 컴파일러는 아래와 같은 에러를 발생 시킬 것이다.
