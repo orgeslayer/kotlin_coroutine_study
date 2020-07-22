@@ -2,8 +2,8 @@ package basic
 
 import kotlinx.coroutines.*
 
-fun main() = runBlocking { // start main coroutine
-    val job = GlobalScope.launch { // launch a new coroutine in background and continue
+fun main() = runBlocking {
+    val job = GlobalScope.launch { // launch a new coroutine and keep a reference to its Job
         delay(1000L)
         println("World!")
     }
@@ -12,6 +12,9 @@ fun main() = runBlocking { // start main coroutine
 }
 
 /**
+ * Waiting for a job
+ *
+
  지금까지 예제는 모두 임의의 지연을 줘서 동작되도록 예제코드를 작성하였는데요,
  이러한 접근 방식은 좋지 못합니다.
  GlobalScope.launch{ } 코루틴 빌더를 통해 생성한 Job 인스턴스를 활용할 수 있습니다.

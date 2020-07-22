@@ -11,6 +11,9 @@ fun main() = runBlocking { // this: CoroutineScope
 }
 
 /**
+ * Structured concurrency
+ *
+
  하지만 아직 실용적으로 사용하기에는 약간 아쉬운점이 있습니다.
  GlobalScope.launch{ } 로 생성한 코루틴은 최상위 코루틴을 생성하여,
  실행하는 동안 일부 메모리 자원을 소모합니다. 만약, 너무 많은 코루틴을 생성 및 실행하고,

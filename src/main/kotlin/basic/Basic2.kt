@@ -14,6 +14,9 @@ fun main() {
 }
 
 /**
+ * Bridging blocking and non-blocking worlds
+ *
+
  첫 번째 예제의 경우 지연 처리를 위하여
  non-blocking delay(...) 와 blocking Thread.sleep(...) 을 혼용되어 사용되고 있습니다.
  이럴 경우, 소스코드 내 어디에서 블록상태를 발생시키고 있는지 확인이 어려워 질 수 있습니다.
