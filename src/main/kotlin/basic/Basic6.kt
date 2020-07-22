@@ -38,4 +38,7 @@ fun main() = runBlocking { // this: CoroutineScope
  - Task from runBlocking
  - Task from nested launch
  - Coroutine scope is over
+-------------------------------------------
+ * kotlin 에서 구현되는 일반적인 함수를 가이드 문서에서는 regular function 으로 표현하고 있습니다.
+ 이 후부터 regular function 은 일반 함수로 표현합니다.
 */
