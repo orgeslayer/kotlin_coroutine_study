@@ -4,7 +4,7 @@ import kotlinx.coroutines.*
 
 fun main() = runBlocking {
     val job = launch {
-        repeat(4) { i ->
+        repeat(1000) { i ->
             println("job: I'm sleeping $i ...")
             delay(500L)
         }
