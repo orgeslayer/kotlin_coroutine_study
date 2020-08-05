@@ -1,4 +1,4 @@
-package basic
+package toc1
 
 import kotlinx.coroutines.*
 
@@ -12,6 +12,8 @@ fun main() {
 }
 
 /**
+ * Basics
+ *
  * Your first coroutine
  *
 
@@ -29,7 +31,9 @@ fun main() {
  그 이유는 delay 함수에 있는데, 해당 함수는 suspend function 으로 스레드에 종속되어 동작할 수 없고 코루틴에서만 종속되어 동작이 가능하기 때문입니다.
 
  -------------------------------------------
- 참조) suspend : 매달다, 걸다.
+ 참조1) coroutine 은 Cooperative Routine 의 약자입니다.
+
+ 참조2) suspend : 매달다, 걸다.
  - 원 의미보다 다양하게 파생된 의미로 더 많이 사용되는 동사입니다.
  - '매달려서' 나아가지 못하기 때문에 '정지되다, 보류되다' 같은 의미로 확산되어 사용됩니다.
 */
