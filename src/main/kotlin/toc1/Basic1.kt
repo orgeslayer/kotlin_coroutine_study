@@ -13,6 +13,7 @@ fun main() {
 
 /**
  * Basics
+ *  - 이 장에서는 코루틴의 기본 개념을 다룹니다.
  *
  * Your first coroutine
  *
