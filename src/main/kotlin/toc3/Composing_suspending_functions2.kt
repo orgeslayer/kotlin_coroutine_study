@@ -23,9 +23,6 @@ fun main() = runBlocking {
 }
 
 /**
- * Composing Suspending Functions
- *  - 이 장에서는 suspending functions 에 대한 다양한 접근 방법을 다룹니다.
- *
  * Concurrent using async
  *
 
