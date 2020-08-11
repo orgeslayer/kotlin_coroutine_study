@@ -19,6 +19,7 @@ fun main() = runBlocking {
 
 /**
  * Cancelling and Timeouts
+ *  - 이 장에서는 코루틴 취소와 timeout 에 대해 다룹니다.
  *
  * Cancelling coroutine execution
  *
