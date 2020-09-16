@@ -25,7 +25,7 @@ fun main() = runBlocking {
 
 /**
  * Representing multiple values
- * - Flow
+ * - Flows
  *
 
  결과로 전달되는 타입을 List<Int> 을 사용한다는 것은, 모든 값(=List의 모든 요소)을
