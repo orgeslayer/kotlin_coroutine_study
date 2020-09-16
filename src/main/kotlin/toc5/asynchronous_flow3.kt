@@ -1,7 +1,6 @@
 package toc5
 
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 suspend fun suspendingSimple(): List<Int> {
     delay(1000) // pretend we are doing something asynchronous here
@@ -23,5 +22,5 @@ fun main() = runBlocking {
  suspend 식별자를 suspendingSimple 함수 앞에 추가함으로써 리턴할 수 있습니다.
 
  이 예제코드는 몇 초 후에 숫자값들을 출력하게 됩니다.
- 
+
  */
