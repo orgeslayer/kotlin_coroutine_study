@@ -18,7 +18,8 @@ fun main() = runBlocking {
 }
 
 /**
- * Transform operator
+ * Intermediate flow operators
+ * - Transform operator
  *
 
  flow 변환 연산자 중 가장 일반적인 것 중 하나가 transform 입니다.

@@ -24,7 +24,8 @@ fun main() = runBlocking {
 }
 
 /**
- * Size-limiting operators
+ * Intermediate flow operators
+ * - Size-limiting operators
  *
 
  flow 에서 take 와 같은 크기를 제한하는 중간 연산자는 해당 한계에 도달했을 때 flow 실행을 취소합니다.
