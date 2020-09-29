@@ -21,7 +21,8 @@ fun main() = runBlocking {
 }
 
 /**
- * Exception transparency
+ * Flow exceptions
+ * - Exception transparency
  *
 
  그렇다면, 방출되는 코드(=수집되는 코드)가 어떻게 예외 처리 동작을 캡슐화 할 수 있을까요?
