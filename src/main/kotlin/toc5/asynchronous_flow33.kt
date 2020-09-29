@@ -17,8 +17,8 @@ fun simpleException() = flow {
 
 fun main() = runBlocking {
     simpleException()
-        .catch { cause -> println("Caught exception") }
         .onCompletion { cause -> if (cause != null) println("Flow completed exceptionally") }
+        .catch { cause -> println("Caught exception") }
         .collect { value -> println(value) }
 }
 
@@ -61,5 +61,6 @@ fun main() = runBlocking {
  -------------------------------------
 
  catch 연산자의 내부 구현체를 확인해 보세요.
+ (cache 연산자의 Transparent 특성 - asynchronous_flow30.kt 참조)
 
  */
