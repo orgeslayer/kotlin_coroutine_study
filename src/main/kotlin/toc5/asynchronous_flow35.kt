@@ -16,7 +16,7 @@ fun main() = runBlocking {
 
 
 /**
- * Launching flow
+ * Launching flow (1)
  *
 
  어떤 소스에서 비동기 이벤트들을 획득하고 나타내기 위해서 flow 를 사용하는 것은 쉽게 표현할 수 있습니다.
