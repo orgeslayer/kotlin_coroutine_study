@@ -30,14 +30,17 @@ fun main() = runBlocking { // this: CoroutineScope
 
  runBlocking과 coroutineScope 두 가지 모두 자식 코루틴이 끝날때 까지 유지되는 부분이 유사해 보입니다.
  가장 큰 차이점은 runBlocking{ } 은 코루틴 실행 시 현재 스레드를 대기하는 것인 반면에,
- coroutineScope{ } 은 그냥 중단됩니다. 이러한 차이때문에,
- runBlocking은 일반 함수이고, coroutineScope 는 suspend 함수입니다.
+ coroutineScope{ } 은 그냥 중단되며, 다른 처리를 위하여 스레드를 해제합니다.
+ 이러한 차이때문에, runBlocking은 일반 함수이고, coroutineScope 는 suspend 함수입니다.
 
  예제코드를 실행하면 다음과 같은 순서로 출력이 됩니다.
  - Task from coroutine scope
  - Task from runBlocking
  - Task from nested launch
  - Coroutine scope is over
+
+"Task from coroutine scope" 메시지 직 후 (nested launch 을 기다리는 동안)
+"Task from runBlocking" 이 아직 coroutineScope 가 종료되지 않았음에도 출력되는 것에 유의하세요.
 -------------------------------------------
  * kotlin 에서 구현되는 일반적인 함수를 가이드 문서에서는 regular function 으로 표현하고 있습니다.
  이 후부터 regular function 은 일반 함수로 표현합니다.

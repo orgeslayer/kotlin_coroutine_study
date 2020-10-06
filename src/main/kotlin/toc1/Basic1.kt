@@ -3,6 +3,11 @@ package toc1
 import kotlinx.coroutines.*
 
 fun main() {
+//    thread {
+//        Thread.sleep(1000L)
+//        println("World!") // print after delay
+//    }
+
     GlobalScope.launch { // launch a new coroutine in background and continue
         delay(1000L) // non-blocking delay for 1 second (default time unit is ms)
         println("World!") // print after delay
@@ -24,8 +29,12 @@ fun main() {
  를 출력하는 프로그램 입니다.
 
  본질적으로, 코루틴은 light-weighted thread 로 표현할 수 있습니다.
- 샘플코드의 경우 GlobalScope.launch{ } 코루틴 빌더를 통해 코드블록이 실행하는데요.
+ 코루틴은 몇몇 CoroutineScope의 Context에서 실행(launch) 되어집니다.
+ 샘플코드의 경우 GlobalScope.launch{ } 코루틴 빌더를 통해 코드블록이 실행하는데요,
+ 새로운 코루틴은 어플리케이션 전체 생명주기상 제한적으로 동작된다는 의미입니다.
+
  GlobalScope.launch 코드블록을 thread{} 로, delay(...) 대신 Thread.sleep(...) 로 변경한 뒤 실행해도 동일한 결과를 확인할 수 있습니다.
+ 한번 변경 후 실행 해보세요. (kotlin.concurrent.thread 를 import 하는 것을 잊지마세요!)
 
  만약 GlobalScope.launch 를 thread{} 로 변경할 경우, 컴파일러는 아래와 같은 에러를 발생 시킵니다.
  - Error: Kotlin: Suspend functions are only allowed to be called from a coroutine or another suspend function

@@ -16,7 +16,7 @@ suspend fun doWorld() {
 }
 
 /**
- * Waiting for a job
+ * Extract function refactoring
  *
 
  이제, launch { } 코드 블록을 별도 함수로 분리해 봅시다.
