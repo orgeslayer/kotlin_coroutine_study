@@ -48,8 +48,8 @@ fun main() = runBlocking {
     main: Now I can quit.
  ------------------------------------
 
-      앞 예제에서도 확인 하였듯이, cancel 과 cancel 후 join 을 호출하면 동작이 다르게 됩니다.
-      위 예제 코드에서 cancelAndJoin 대신, join 만 호출할 경우 아래와 같은 결과를 확인할 수 있습니다.
+ 앞 예제에서도 확인 하였듯이, 위 예제 코드에서 cancelAndJoin 대신,
+ cancel 만 호출할 경우 아래와 같은 결과를 확인할 수 있습니다.
 
  ------------------------------------
     job: I'm sleeping 0 ...
