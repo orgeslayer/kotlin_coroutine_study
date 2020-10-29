@@ -39,8 +39,7 @@ fun main() = runBlocking {
  각각의 코루틴 결과가 종료될 때 까지 대기하게 됩니다.
 
  만약 위 코드에서 먼저 start() 를 시작하지 않고 println 에서 await() 만 호출할 경우,
- 순차적으로 동작될 것이므로 이는 lazy을 의도하고 사용된 사례가 아니라고 할 수 있습니다.
- (= lazy start 를 의도하지 않고 사용했다는 의미)
+ 순차적으로 동작될 것이므로 이는 lazy을 설계한 의도대로 사용하지 않았다고 할 수 있습니다.
  async(start = CoroutineStart.LAZY) 의 경우, 연산 수행 결과를 중단함수(suspending function)
- 에서 전달하는 케이스가 아니라면 lazy 로 사용케이스를 대체할 수 있다.
+ 에서 전달하는 케이스가 아니라면 lazy 로 사용케이스를 대체할 수 있습니다.
  */
