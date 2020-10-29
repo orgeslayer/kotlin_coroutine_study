@@ -18,8 +18,8 @@ fun main() = runBlocking {
  *  Closing and iteration over channels
  *
 
- Queue 와는 다르게, channel 은 종료를 통하여 더 이상 요소가 오지 않는다는 나타낼 수 있습니다.
- 수신자 입장에서는 channel 통해 받는 요소를 정식 표현, for 문법으로 사용이 가능합니다.
+ Queue 와는 다르게, channel 은 종료를 통하여 더 이상 요소가 오지 않는다는 것을 나타낼 수 있습니다.
+ 수신자 입장에서는 channel 통해 받는 요소를 정식 표현, 즉 for 문법으로 사용이 가능합니다.
 
  close() 는 특별한 종료 토큰을 channel 에 보내는 개념과 유사합니다.
  반복(=iteration)은 close 토큰 수신 즉시 멈추게 되며, 따라서

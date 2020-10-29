@@ -38,4 +38,6 @@ fun main() = runBlocking {
     Done!
  ----------------------------------------
 
+ * BlockingQueue 에 대한 내용은 아래 링크를 참조하세요.
+    - http://tutorials.jenkov.com/java-concurrency/blocking-queues.html
 */
