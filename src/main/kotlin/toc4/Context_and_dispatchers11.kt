@@ -13,7 +13,6 @@ fun main() = runBlocking {
         println("After yield, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
     }
     job.join()
-    threadLocal.ensurePresent()
     println("Post-main, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
 }
 
@@ -45,6 +44,9 @@ fun main() = runBlocking {
 
 
  ------------------------------------------------
+ * ThreadLocal 은 한 스레드에 의해 읽고 쓰여질 수 있는 변수를 생성할 수 있도록 돕는 클래스입니다.
+   자세한 내용은 링크를 참조하세요.
+   (https://parkcheolu.tistory.com/17)
  * Thread 에서 yield 는 호출한 스레드가 실행 대기상태로 돌아가며,
    다른 우선순위의 스레드가 실행할 수 있는 기회를 가질 수 있도록 해줍니다.
 

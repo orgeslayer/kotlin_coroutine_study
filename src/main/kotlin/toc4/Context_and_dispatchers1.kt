@@ -21,7 +21,7 @@ fun main() = runBlocking {
 
 /**
  * Coroutine Context and Dispatchers
- *  - 코루틴은 코틀린 표준 라이브러리에서 CorooutineContext 타입으로 정의된 몇몇 컨텍스트에서 수행됩니다.
+ *  - 코루틴은 코틀린 표준 라이브러리에서 CoroutineContext 타입으로 정의된 몇몇 컨텍스트에서 수행됩니다.
  *  - 코루틴 컨텍스트는 다양한 요소의 집합입니다.
  *  - 주요 요소로는 이전에 확인했던 Job이라는 코루틴과, 이번 절에서 다루게 되는 Dispatcher 입니다.
  *

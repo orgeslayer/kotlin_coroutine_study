@@ -2,6 +2,8 @@ package toc4
 
 import kotlinx.coroutines.*
 
+//val threadLocal = ThreadLocal<String?>() // declare thread-local variable
+
 fun main() = runBlocking {
     threadLocal.set("main")
     println("Pre-main, current thread: ${Thread.currentThread()}, thread local value: '${threadLocal.get()}'")
