@@ -21,7 +21,7 @@ fun main() = runBlocking {
  ----------------------------------------
 
  CoroutineScope의 isActive 는
- coroutineScope[Job]?.isActive == true
+ coroutineContext[Job]?.isActive == true
  표현의 편의를 위한 간략한 표현임을 확인해 둡시다.
  */
 
