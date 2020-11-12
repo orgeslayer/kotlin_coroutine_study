@@ -4,6 +4,13 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import kotlin.system.measureTimeMillis
 
+//fun simpleBuffering(): Flow<Int> = flow {
+//    for (i in 1..3) {
+//        delay(100) // pretend we are asynchronously waiting 100 ms
+//        emit(i) // emit next value
+//    }
+//}
+
 fun main() = runBlocking {
     val time = measureTimeMillis {
         simpleBuffering()
