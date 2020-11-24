@@ -20,7 +20,7 @@ fun main() = runBlocking {
  *  Channels
  *  - 지연된 값 (Deferred Value)은 코루틴 간 편리하게 하나의 값을 공유할 수 있습니다.
  *    Channels 은 값의 스트림을 전달할 수 있는 방법을 제공합니다.
- *  - Chanel basic
+ *  - Channel basic
  *
 
  Channel 은 BlockingQueue 와 개념적으로 매우 유사합니다.
