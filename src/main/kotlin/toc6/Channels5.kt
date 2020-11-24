@@ -13,9 +13,8 @@ fun CoroutineScope.numbersFrom(start: Int) = produce {
 
 fun CoroutineScope.filter(numbers: ReceiveChannel<Int>, prime: Int) = produce {
     for (x in numbers) {
-//        println("[Prime Filter] Pipeline : $x, prime : $prime")
+//        println("[filter] prime : $prime, send : $x")
         if (x % prime != 0) {
-//            println("[filter] prime : $prime, send : $x")
             send(x)
         }
     }
@@ -26,6 +25,7 @@ fun main() = runBlocking {
     repeat(10) {
         val prime = cur.receive()
         println(prime)
+//        println("*".repeat(20))
         cur = filter(cur, prime)
     }
     coroutineContext.cancelChildren() // cancel all children to let main finish

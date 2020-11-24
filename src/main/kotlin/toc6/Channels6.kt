@@ -6,8 +6,8 @@ import kotlinx.coroutines.channels.*
 fun CoroutineScope.produceDelayNumbers() = produce {
     var x = 1 // start from 1
     while (true) {
-        send(x++) // produce next
         delay(100) // wait 0.1s
+        send(x++) // produce next
     }
 }
 
@@ -26,22 +26,9 @@ fun CoroutineScope.launchConsumeProcessor(id: Int, channel: ReceiveChannel<Int>)
 fun main() = runBlocking {
     val producer = produceDelayNumbers()
     repeat(5) { launchProcessor(it, producer) }
-    delay(950)
+    delay(1050)
     producer.cancel() // cancel producer coroutine and thus kill them all
 }
-
-//fun main() = runBlocking {
-//    val producer = produceDelayNumbers()
-//    repeat(5) {
-//        val job = launchProcessor(it, producer)
-//        if (it == 3) {
-//            delay( 200)
-//            job.cancel()
-//        }
-//    }
-//    delay(950)
-//    producer.cancel() // cancel producer coroutine and thus kill them all
-//}
 
 /**
  * Fan-out
@@ -59,16 +46,16 @@ fun main() = runBlocking {
  차이가 있을 수 있으나 거의 대부분 아래와 유사할 것입니다.
 
  ---------------------------------------------
-    Processor #2 received 1
-    Processor #4 received 2
-    Processor #0 received 3
-    Processor #1 received 4
-    Processor #3 received 5
-    Processor #2 received 6
-    Processor #4 received 7
-    Processor #0 received 8
-    Processor #1 received 9
-    Processor #3 received 10
+    Processor #0 received 1
+    Processor #1 received 2
+    Processor #2 received 3
+    Processor #3 received 4
+    Processor #4 received 5
+    Processor #0 received 6
+    Processor #1 received 7
+    Processor #2 received 8
+    Processor #3 received 9
+    Processor #4 received 10
  ---------------------------------------------
 
  생산자 코루틴을을 취소하면 채널이 닫히므로, 결국 프로세서 코루틴들 또한 닫히는 점에 유의하세요.
@@ -82,4 +69,7 @@ fun main() = runBlocking {
  ---------------------------------------------
  * for 구문과 consumeEach 에 대한 차이는 예제 코드의 main() 을 하단의 main() 코드로 변경하고,
   launchProcessor / launchConsumeProcessor 를 변경하여 실행해보면 차이를 확인할 수 있습니다.
+ * 'Channels are fair' 에서 소개하는 Channel에서 송출된 데이터의 공평성으로, 코루틴 공식문서 내용의
+  예제 및 실행결과를 일부 수정하였습니다.
+
  */
