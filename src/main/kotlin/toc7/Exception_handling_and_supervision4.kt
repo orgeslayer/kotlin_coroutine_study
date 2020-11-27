@@ -38,11 +38,17 @@ fun main() = runBlocking {
 
  Note) 이 예제의 CoroutineExceptionHandler 는 항상 GlobalScope 에서 생성된
  코루틴에 설치되어 있습니다.(=installed) 메인 코루틴은 설치된 예외 핸들러에도 불구하고 예외적으로
- 자식 코루틴이 예외에 의하여 종료되면 항상 취소되기 때문에, 주요 실행 코루틴 범위에 CoroutineExceptionHandler
- 를 설치하는 것은 타당하지 않습니다.
+ 자식 코루틴이 예외에 의하여 종료되면 항상 취소되기 때문에, 주요 작업 실행사항을 코루틴 범위에
+ CoroutineExceptionHandler 를 설치(=installed)하는 것은 타당하지 않습니다.
 
- 
+ 근본적으로 발생된 예외사항은 모든 자식들이 종료되고 나서 그 부모만이 처리하며, 이러한 사항은
+ 다음 예제에서 확인할 수 있습니다.
 
-
+ ----------------------------------------------------
+    Second child throws an exception
+    Children are cancelled, but exception is not handled until all children terminate
+    The first child finished its non cancellable block
+    CoroutineExceptionHandler got java.lang.ArithmeticException
+ ----------------------------------------------------
 
  */
