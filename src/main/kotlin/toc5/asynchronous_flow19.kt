@@ -14,7 +14,6 @@ fun simpleBufferingCollectLatest(): Flow<Int> = flow {
 fun main() = runBlocking {
     val time = measureTimeMillis {
         simpleBufferingCollectLatest()
-            .conflate() // conflate emissions, don't process each one
             .collectLatest { value -> // cancel & restart on the latest value
                 println("Collecting $value")
                 delay(300) // pretend we are processing it for 300 ms
