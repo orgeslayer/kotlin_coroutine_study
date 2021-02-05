@@ -38,6 +38,7 @@ fun main() = runBlocking {
     Collecting 2
     Collecting 3
     Done 3
+    Collected in 658 ms
  ------------------------------------------
 
  collectLatest 의 코드블록은 300ms가가 소모되지만, 새로운 값은 매 100ms 마다 방출되며,
